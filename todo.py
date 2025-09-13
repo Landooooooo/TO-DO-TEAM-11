@@ -12,19 +12,22 @@ def view_tasks():
     for i, task in enumerate(tasks, start=1 ):
         print(f"{i}. {task}")
 # Step 4: Delete a task
-
+def delete_task(index):
+    task = tasks.pop(index)
+    print(f"Deleted: {task}")
 
 # Step 5: Mark task complete
 
+def mark_complete(index):
+    tasks[index] = ((tasks[index]) + "(COMPLETE)")
 
-# Step 6: Save/load tasks (extra stretch for today)
 
 
+add_task("Finish Cyber 201 assignment")
+add_task("Push code to GitHub")
+add_task("Study today's notes")
+view_tasks()
+delete_task(0)   
+mark_complete(1)
+view_tasks()
 # Demo flow (you can run this file directly: python todo.py)
-if __name__ == "__main__":
-    add_task("Finish Cyber 201 assignment")
-    add_task("Push code to GitHub")
-    view_tasks()
-    #mark_complete(0)
-    #view_tasks()
-    #save_tasks()
